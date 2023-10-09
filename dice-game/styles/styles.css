@@ -1,0 +1,185 @@
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  height: 100vh;
+  color: #333;
+  background: linear-gradient(to top left, #265cdc, #c726dc);
+  align-items: center;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  /* background-color: #fff; */
+  position: relative;
+  width: 73%;
+  height: 79%;
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.744);
+  background-color: rgba(255, 255, 255, 0.35);
+  filter: blur();
+  display: flex;
+  border-radius: 0.7rem;
+  /* overflow: hidden; */
+}
+
+.player {
+  width: 100%;
+  flex: 50%;
+  padding: 6rem;
+  /* padding-top: 5.5rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/* ELEMENTS */
+.name {
+  font-size: 2.5rem;
+  font-weight: 100 !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 6rem;
+  margin-bottom: auto;
+  color: #771784;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.459);
+  /* border-radius: 0.7rem; */
+}
+
+.player--active .name {
+  font-weight: bolder !important;
+}
+
+.current {
+  background-color: #771784;
+  color: #fff;
+  opacity: 0.5;
+  border-radius: 1rem;
+  width: 60%;
+  text-align: center;
+  padding: 2rem;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500 !important;
+}
+.current-score {
+  font-size: 2rem;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.7s; /* this is the default (transition duration) that would take the element to spawn
+    to the page or returning from another transition into its original position */
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.hint {
+  position: absolute;
+  top: 3rem;
+  left: 4rem;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.5rem;
+  font-weight: 750;
+}
+
+.btn::first-letter {
+  font-size: 1.6rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn--new {
+  top: 2rem;
+}
+
+.btn--roll {
+  top: 22.7rem;
+}
+
+.btn--hold {
+  top: 27.65rem;
+}
+
+.btn:hover {
+  box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.655);
+}
+
+.btn:active {
+  transform: translate(-50%, 0.35rem);
+  background-color: #fff;
+  transition: 0.2s;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 9rem;
+  height: 7rem;
+  transform: translateX(-50%);
+}
+
+.player--winner {
+  background-color: rgba(3, 255, 24, 0.492);
+  transition: 0.75s;
+}
+
+.player--winner .name {
+  color: #fff;
+  font-weight: 700;
+  transform: translate(-20%, 0.6rem);
+}
+
+.player--winner .score {
+  color: #fff;
+  font-weight: 700;
+  font-size: 10rem;
+  transform: translate(-20%, 5rem);
+}
+
+.player--winner .current {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
